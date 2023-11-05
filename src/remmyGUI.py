@@ -9,6 +9,8 @@ Created on Sun Nov  5 10:02:27 2023
 import tkinter as tk
 from tkinter import ttk
 import subprocess
+import os
+from PIL import Image, ImageTk
 
 # Function to handle button clicks
 def on_button_click(script_number):
@@ -24,9 +26,21 @@ root = tk.Tk()
 root.title("Remmy")
 
 # Configure window size and padding
-root.geometry("300x150")
+root.geometry("300x250")
 root.resizable(False, False)
 root.configure(padx=20, pady=20)
+
+# Load and display an image
+# Load and resize the image
+image_path = "../public/tom_logo.png"
+original_image = Image.open(image_path)
+# Resize the image to fit the desired dimensions
+resized_image = original_image.resize((250,100), Image.ANTIALIAS)
+# Convert the resized image to PhotoImage format for displaying in Tkinter
+tk_image = ImageTk.PhotoImage(resized_image)
+
+image_label = tk.Label(root, image=tk_image)
+image_label.pack()
 
 # Button 1
 button1 = ttk.Button(root, text="Callibrate Headset", command=lambda: on_button_click(1))
