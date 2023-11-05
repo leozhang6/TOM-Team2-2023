@@ -26,7 +26,7 @@ root = tk.Tk()
 root.title("Remmy")
 
 # Configure window size and padding
-root.geometry("300x250")
+root.geometry("300x270")
 root.resizable(False, False)
 root.configure(padx=20, pady=20)
 
@@ -51,7 +51,7 @@ button2 = ttk.Button(root, text="Run Program", command=lambda: on_button_click(2
 button2.pack(pady=10, fill=tk.X)
 
 # Label to display script execution status
-result_label = tk.Label(root, text="", font=("Arial", 12))
+result_label = tk.Label(root, text="Welcome to Remmy!", font=("Arial", 12))
 result_label.pack()
 
 # Start the main loop
